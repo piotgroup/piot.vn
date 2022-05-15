@@ -6,21 +6,27 @@ import SectionHeader from 'components/section-header';
 const data = [
   {
     id: 1,
-    title: 'Connect with support',
+    title: 'XEM LẠI HÓA ĐƠN',
     text:
-      'Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.',
+      'Khách hàng đã xác nhận hóa đơn của bạn.',
   },
   {
     id: 2,
-    title: 'Explain you business idea',
+    title: 'THỰC HIỆN LỰA CHỌN CỦA BẠN',
     text:
-      'Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.',
+      'Bạn chọn hóa đơn nào để chiết khấu.',
   },
   {
     id: 3,
-    title: 'Be partner & earn money',
+    title: 'ĐẶT TỶ LỆ CỦA BẠN',
     text:
-      'Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.',
+      'Bạn cung cấp chiết khấu khi thanh toán sớm.',
+  },
+  {
+    id: 4,
+    title: 'NHẬN THANH TOÁN',
+    text:
+      'Nếu được chấp nhận, nhận tiền vào tài khoản.',
   },
 ];
 
@@ -29,8 +35,8 @@ export default function WorkFlow() {
     <section sx={{ variant: 'section.workflow' }}>
       <Container>
         <SectionHeader
-          title="Let’s meet how its work"
-          description="Focus only on the meaning, we take care of the design. As soon as the meeting end you can export in one click into your preferred format."
+          title="Cách thức hoạt động"
+          description="Chỉ cần đăng nhập và yêu cầu thanh toán sớm cho các hóa đơn được Khách hàng xác nhận."
         />
 
         <Grid sx={styles.grid}>
@@ -67,9 +73,9 @@ const styles = {
     gridTemplateColumns: [
       'repeat(1,1fr)',
       null,
-      'repeat(2,1fr)',
+      'repeat(4,1fr)',
       null,
-      'repeat(3,1fr)',
+      'repeat(4,1fr)',
     ],
   },
   card: {

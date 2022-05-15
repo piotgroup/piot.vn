@@ -1,18 +1,15 @@
 export default [
   {
-    path: 'trangchu',
+    path: 'home',
     label: 'Trang Chủ',
   },
   {
-    path: 'nhacungcap',
-    label: 'Nhà Cung Cấp',
+    path: 'feature1',
+    label: 'Dịch Vụ',
   },
   {
-    path: 'doanhnghiep',
-    label: 'Doanh Nghiệp',
+    path: 'blogs',
+    label: 'Blogs',
   },
-  {
-    path: 'dautu',
-    label: 'Đầu Tư',
-  },
+
 ];

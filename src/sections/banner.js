@@ -39,7 +39,7 @@ export default function Banner() {
           VỐN LƯU ĐỘNG CHO DOANH NGHIỆP
           </Heading>
           <Text as="p" variant="heroSecondary">
-          Nền tảng trực tuyến an toàn của PIOT cho phép các công ty làm việc với các nhà cung cấp và khách hàng của họ để cải thiện dòng tiền bằng cách xác định thời gian và điều khoản tốt nhất để thanh toán hoặc nhận thanh toán.
+          Nền tảng trực tuyến an toàn cho phép các công ty làm việc với các nhà cung cấp và khách hàng để cải thiện dòng tiền bằng cách xác định thời gian và điều khoản tốt nhất để thanh toán hoặc nhận thanh toán.
           </Text>
           <Button >
             Đăng ký

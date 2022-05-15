@@ -27,7 +27,7 @@ const Testimonials = () => {
     <Box as="section" id="testimonials" sx={styles.section}>
       <Container>
       <Box as="blockquote">
-        <Text as="H2" sx={styles.title}>
+        <Text as="h2" sx={styles.title}>
 
                 {item.quote}
                 </Text>

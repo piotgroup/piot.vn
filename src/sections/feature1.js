@@ -14,7 +14,7 @@ const data = [
     altText: 'Nhà cung cấp',
     title: 'Dành cho Nhà cung cấp',
     text:
-      'Được thanh toán sớm hơn khi bạn cần vốn lưu động - hoặc thanh toán vào thời điểm thích hợp để tối ưu hóa vị thế tiền mặt của bạn.',
+      'Được thanh toán sớm hơn khi bạn cần vốn lưu động - hoặc thanh toán vào thời điểm thích hợp để tối ưu hóa dòng tiền mặt.',
   },
   {
     id: 2,
@@ -22,16 +22,16 @@ const data = [
     altText: 'Doanh nghiệp',
     title: 'Dành cho Doanh nghiệp',
     text:
-      'Tăng cường bảng cân đối - hoặc củng cố chuỗi cung ứng của bạn.',
+      'Tăng cường bảng cân đối, củng cố chuỗi cung ứng của doanh nghiệp.',
   },
 ];
 
 export default function Feature1() {
   return (
-    <section sx={{ variant: 'section.feature' }} id="feature">
+    <section sx={{ variant: 'section.feature' }} id="feature1">
       <Container>
         <SectionHeader
-          title="TIẾP CẬN THUẬN TIỆN, HIỆU QUẢ VỀ CHI PHÍ ĐỐI VỚI VỐN LƯU ĐỘNG MÀ BẠN CẦN ĐỂ PHÁT TRIỂN"
+          title="THUẬN TIỆN, HIỆU QUẢ VỀ CHI PHÍ"
           // description="Focus only on the meaning, we take care of the design. As soon as the meeting end you can export in one click into your preferred format."
         />
 
