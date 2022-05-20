@@ -4,7 +4,7 @@ module.exports = {
     siteTitleAlt: `Lung Vang`,
     siteHeadline: `Lung Vang`,
     description: `Công ty Cổ phần Lũng Vàng`,
-    siteUrl: `https://lungvang.vn`,
+    siteUrl: `https://piot.vn`,
     siteLanguage: `vi`,
     siteImage: `/banner.jpg`,
     author: `@thuanqh`,
