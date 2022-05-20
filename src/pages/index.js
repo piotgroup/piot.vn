@@ -1,42 +1,29 @@
-import React from 'react';
-import { ThemeProvider } from 'theme-ui';
-import theme from 'theme';
-import SEO from 'components/seo';
-import Layout from 'components/layout';
-import Banner from 'sections/banner';
-import Feature from 'sections/feature';
-import Feature1 from 'sections/feature1';
-import BusinessProfit from 'sections/business-profit';
-import Commitment from 'sections/commitment';
-import Usercase from 'sections/usercase';
-import ClientNetwork from 'sections/client-network';
-import WorkFlow from 'sections/workflow';
-import Support from 'sections/support';
-import Testimonials from 'sections/testimonials';
-import CallToAction from 'sections/call-to-action';
-import SubscribeEmail from 'sections/subcribe-email';
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import SEO from "components/seo";
+import Layout from "components/layout";
+import Banner from "sections/banner";
+import Subscribe from "sections/subscribe";
+import Services from "sections/services";
+import VideoIntro from "sections/video-intro";
+import WorldMap from "sections/world-map";
+import Milestone from "sections/milestone";
+import Blog from "sections/blog";
 
 export default function IndexPage() {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <SEO
-          description="Nền tảng tài trợ thương mại trực tuyến an toàn của PIOT cho phép các công ty làm việc với các nhà cung cấp và khách hàng để cải thiện dòng tiền bằng cách xác định thời gian và điều khoản tốt nhất để thanh toán hoặc nhận thanh toán"
-          title="PIOT - Đồng hành cùng doanh nghiệp bạn"
-        />
-        <Banner />
-        <WorkFlow />
-        {/* <Feature1 /> */}
-        <Feature />
-        <Commitment />
-        <Testimonials/>
-        <BusinessProfit />
-        <ClientNetwork />
-        <Usercase />
-        {/* <Support /> */}
-        {/* <CallToAction /> */}
-        <SubscribeEmail />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <SEO
+        title="Công ty Quản lý Tài sản Lũng Vàng"
+        description="Công ty quản lý và số hoá tài sản, cho vay, đầu tư và quản lý quỹ."
+      />
+      <Banner />
+      <Services />
+      <VideoIntro />
+      <WorldMap />
+      <Milestone />
+      <Blog />
+      <Subscribe />
+    </Layout>
   );
 }

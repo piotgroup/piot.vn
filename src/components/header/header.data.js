@@ -1,15 +1,26 @@
 export default [
   {
-    path: 'home',
-    label: 'Trang Chủ',
+    path: "home",
+    label: "Trang chủ",
   },
   {
-    path: 'feature1',
-    label: 'Dịch Vụ',
+    path: "loan",
+    label: "Cho vay",
   },
   {
-    path: 'blogs',
-    label: 'Blogs',
+    path: "services",
+    label: "Đầu tư",
   },
-
+  {
+    path: "consign",
+    label: "Ký gửi",
+  },
+  {
+    path: "about",
+    label: "Giới thiệu",
+  },
+  {
+    path: "blog",
+    label: "Tin tức",
+  },
 ];

@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://piot.vn
-
-# Sitemaps
-Sitemap: https://piot.vn/sitemap.xml

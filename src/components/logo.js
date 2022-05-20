@@ -1,21 +1,28 @@
 /** @jsx jsx */
-import { jsx, Image } from 'theme-ui';
-import { Link } from 'components/link';
-import { FaImages } from 'react-icons/fa';
+import { jsx, Image } from "theme-ui";
+import { Link } from "components/link";
+import logo from "assets/images/logo.png";
+import logoWhite from "assets/images/logo-white.png";
 
-export default function Logo({ src, ...rest }) {
+export default function Logo({ isWhite, ...props }) {
   return (
-    <Link
-      path="/"
-      sx={{
-        variant: 'links.logo',
-        display: 'flex',
-        cursor: 'pointer',
-        mr: 15,
-      }}
-      {...rest}
-    >
-      <Image src={src} alt="piot logo" variant="images.logo"/>
+    <Link path="/" sx={styles.logo} {...props}>
+      <Image
+        width="187"
+        height="37"
+        src={isWhite ? logoWhite : logo}
+        alt="startup landing logo"
+      />
     </Link>
   );
 }
+const styles = {
+  logo: {
+    alignItems: "center",
+    cursor: "pointer",
+    display: "inline-flex",
+    img: {
+      maxWidth: [150, "100%"],
+    },
+  },
+};

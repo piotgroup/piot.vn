@@ -1,14 +1,10 @@
 {
-  "name": "piot.vn",
-  "description": "Supply Chain Finance",
-  "formation": {
-    "web": {
-      "quantity": 1
-    }
-  },
   "buildpacks": [
     {
       "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
     }
   ]
 }

@@ -1,131 +1,164 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
-import { keyframes } from '@emotion/core';
-import { Link } from 'react-scroll';
-import Logo from 'components/logo';
-import { DrawerProvider } from 'contexts/drawer/drawer.provider';
-import MobileDrawer from './mobile-drawer';
-import menuItems from './header.data';
+import { jsx, Box, Flex, Container, Button, Image } from "theme-ui";
+import { navigate } from "gatsby";
+import Sticky from "react-stickynode";
+import Logo from "components/logo";
+import { NavLink } from "components/link";
+import { DrawerProvider } from "contexts/drawer/drawer-provider";
+import NavbarDrawer from "./navbar-drawer";
+import menuItems from "./header.data";
+import lock from "assets/images/icons/lock.png";
+import { isLoggedIn, logout } from "../../services/auth";
 
-import LogoDark from 'assets/Piot-black.png';
-import Divider from 'assets/divider.svg';
-
-export default function Header({ className }) {
+export default function Header() {
   return (
     <DrawerProvider>
-      <header sx={styles.header} className={className} id="header">
-        <Container sx={styles.container}>
-          <Logo src={LogoDark} />
-
-          <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
-              <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </Link>
-            ))}
-          </Flex>
-
-          <Button
-            className="donate__btn"
-            variant="secondary"
-            aria-label="Get Started"
-          >
-            Đăng ký
-          </Button>
-
-          <MobileDrawer />
-        </Container>
-      </header>
+      <Box sx={styles.headerWrapper}>
+        <Sticky enabled={true} top={0} activeClass="is-sticky" innerZ={100}>
+          <Box as="header" sx={styles.header}>
+            <Container>
+              <Box sx={styles.headerInner}>
+                <Logo sx={styles.logo} />
+                <Flex as="nav" sx={styles.navbar} className="navbar">
+                  <Box as="ul" sx={styles.navList}>
+                    {menuItems.map(({ path, label }, i) => (
+                      <li key={i}>
+                        <NavLink path={path} label={label} />
+                      </li>
+                    ))}
+                  </Box>
+                </Flex>
+                <Flex sx={styles.buttonGroup}>
+                  {isLoggedIn() ? (
+                    <Button
+                      variant="text"
+                      sx={styles.login}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        logout(() => navigate(`/app/login`));
+                      }}
+                    >
+                      <Image
+                        src={lock}
+                        width="19"
+                        height="23"
+                        alt="lock icon"
+                      />
+                      Đăng xuất
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="text"
+                      sx={styles.login}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        navigate(`/app/login`);
+                      }}
+                    >
+                      <Image
+                        src={lock}
+                        width="19"
+                        height="23"
+                        alt="lock icon"
+                      />
+                      Đăng nhập
+                    </Button>
+                  )}
+                  <Button variant="primary" sx={styles.donateNow}>
+                    ĐẦU TƯ NGAY
+                  </Button>
+                </Flex>
+                <NavbarDrawer />
+              </Box>
+            </Container>
+          </Box>
+        </Sticky>
+      </Box>
     </DrawerProvider>
   );
 }
 
-const positionAnim = keyframes`
-  from {
-    position: fixed;
-    opacity: 1;
-  }
-
-  to {
-    position: absolute;
-    opacity: 1;
-    transition: all 0.4s ease;
-  }
-`;
-
 const styles = {
+  headerWrapper: {
+    backgroundColor: "transparent",
+    ".is-sticky": {
+      header: {
+        backgroundColor: "white",
+        boxShadow: "0 6px 13px rgba(38,78,118,0.1)",
+        paddingTop: "15px",
+        paddingBottom: "15px",
+      },
+    },
+  },
   header: {
-    py: [4, null, 5],
-    width: '100%',
-    position: 'absolute',
-    top: 0,
+    position: "fixed",
     left: 0,
-    backgroundColor: 'transparent',
-    transition: 'all 0.4s ease',
-    animation: `${positionAnim} 0.4s ease`,
-    '.donate__btn': {
-      flexShrink: 0,
-      mr: [15, 20, null, null, 0],
-      ml: ['auto', null, null, null, 0],
-      backgroundImage: ['none', null, null, null, `url(${Divider})`],
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center bottom',
-      backgroundSize: 'contain',
-      backgroundColor: ['#FEEDEF', null, null, null, 'transparent'],
-      color: 'primary',
-      fontWeight: 'bold',
-      py: ['12px', null, null, null, 2],
-      px: [3, null, null, null, 0],
-      ':hover': {
-        backgroundColor: ['primary', null, null, null, 'transparent'],
-        color: ['white', null, null, null, 'primary'],
-      },
-    },
-    '&.sticky': {
-      position: 'fixed',
-      backgroundColor: 'background',
-      color: 'heading',
-      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
-      py: '20px',
-      'nev > a': {
-        color: 'heading',
-      },
-      '.donate__btn': {
-        border: '0px solid',
-      },
+    right: 0,
+    py: 4,
+    transition: "all 0.3s ease-in-out 0s",
+    "&.is-mobile-menu": {
+      backgroundColor: "white",
     },
   },
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  headerInner: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
-  nav: {
-    ml: 'auto',
-    mr: 6,
-    display: 'none',
-    '@media screen and (min-width: 1024px)': {
-      display: 'block',
+  logo: {
+    mr: [null, null, null, null, 6, 12],
+  },
+  navbar: {
+    display: ["none", null, null, null, "flex"],
+    alignItems: "center",
+    flexGrow: 1,
+    // justifyContent: 'center',
+  },
+  navList: {
+    display: ["flex"],
+    listStyle: "none",
+    flexGrow: 1,
+    p: 0,
+    ".nav-item": {
+      cursor: "pointer",
+      fontWeight: 400,
+      padding: 0,
+      margin: [null, null, null, null, "0 20px"],
     },
-    a: {
-      fontSize: '16px',
-      fontWeight: 'heading',
-      px: 20,
-      cursor: 'pointer',
-      lineHeight: '1.2',
-      transition: 'all 0.15s',
-      color: 'heading',
-      '&.active': {
-        color: 'primary',
-      },
+    ".active": {
+      color: "primary",
+    },
+  },
+  buttonGroup: {
+    alignItems: "center",
+    marginLeft: "auto",
+    marginRight: [4, 6],
+    button: {
+      fontWeight: 500,
+    },
+  },
+  login: {
+    p: 0,
+    mr: [null, null, null, null, 6],
+    img: {
+      mr: 2,
+      maxWidth: [12, 15, "100%"],
+    },
+  },
+  donateNow: {
+    display: ["none", null, null, null, "flex"],
+    minHeight: [30, null, null, 45],
+    px: ["12px", null, null, 4],
+    fontSize: [0, null, null, "15px"],
+  },
+  closeButton: {
+    height: "32px",
+    padding: "4px",
+    minHeight: "auto",
+    width: "32px",
+    ml: "3px",
+    path: {
+      stroke: "text",
     },
   },
 };
