@@ -10,16 +10,16 @@ const menuItems = [
     label: "Trang chủ",
   },
   {
-    path: "#loan",
-    label: "Cho vay",
+    path: "#lending",
+    label: "Tài trợ",
   },
   {
     path: "#invest",
     label: "Đầu tư",
   },
   {
-    path: "#consign",
-    label: "Ký gửi",
+    path: "#agents",
+    label: "Cộng tác",
   },
   {
     path: "#supports",
