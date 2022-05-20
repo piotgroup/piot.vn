@@ -2327,9 +2327,9 @@
     nullthrows "^1.1.1"
 
 "@parcel/source-map@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@parcel/source-map/-/source-map-2.0.4.tgz#9a9f90e4b016f993eb077afa669878738de641d4"
-  integrity sha512-xEwOdWK2ha5dmy6JfbyK36lcz9shTqpnRFKSOWsw/wnfjysSq5P2admYLkI5oCh0L5XyBQBwQN18bKaSaNNPhw==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@parcel/source-map/-/source-map-2.0.5.tgz#7dabcea0890914c390b8cf32e208d3f667e1ff38"
+  integrity sha512-DRVlCFKLpqBSIbMxUoVlHgfiv12HTW/U7nnhzw52YgzDVXUX9OA41dXS1PU0pJ1si+D1k8msATUC+AoldN43mg==
   dependencies:
     detect-libc "^1.0.3"
 
