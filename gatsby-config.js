@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Công ty Cổ phần Lũng Vàng`,
-    siteTitleAlt: `Lung Vang`,
-    siteHeadline: `Lung Vang`,
-    description: `Công ty Cổ phần Lũng Vàng`,
+    title: `Nền tảng tài trợ thương mại`,
+    siteTitleAlt: `Piot`,
+    siteHeadline: `Piot`,
+    description: `Nền tảng tài trợ thương mại`,
     siteUrl: `https://piot.vn`,
     siteLanguage: `vi`,
     siteImage: `/banner.jpg`,
@@ -54,22 +54,22 @@ module.exports = {
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "lungvang.vn",
+        cookieDomain: "piot.vn",
       },
     },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.lungvang.vn",
-        sitemap: "https://www.lungvang.vn/sitemap.xml",
+        host: "https://www.piot.vn",
+        sitemap: "https://www.piot.vn/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `LungVang`,
-        short_name: `LungVang`,
+        name: `PIOT`,
+        short_name: `PIOT`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
