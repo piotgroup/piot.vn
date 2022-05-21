@@ -14,8 +14,8 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO
-        title="Công ty Quản lý Tài sản Lũng Vàng"
-        description="Công ty quản lý và số hoá tài sản, cho vay, đầu tư và quản lý quỹ."
+        title="Công ty tài chính PIOT"
+        description="Công ty cung cấp các dịch vụ tài trợ thương mại cho doanh nghiệp."
       />
       <Banner />
       <Services />

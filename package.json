@@ -1,8 +1,8 @@
 {
-  "name": "lungvang.vn",
+  "name": "piot.vn",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/lungvang/lungvang.vn.git",
+  "repository": "https://github.com/piotgroup/piot.vn.git",
   "author": "Jason Quach <thuanqh@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
