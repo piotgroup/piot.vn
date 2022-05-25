@@ -11,7 +11,7 @@ export default function Logo({ isWhite, ...props }) {
         width="187"
         height="37"
         src={isWhite ? logoWhite : logo}
-        alt="startup landing logo"
+        alt="Piot SCF logo"
       />
     </Link>
   );

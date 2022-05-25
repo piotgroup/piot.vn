@@ -4,16 +4,16 @@ export default [
     label: "Trang chủ",
   },
   {
-    path: "lending",
-    label: "Tài trợ",
+    path: "services",
+    label: "Dịch vụ",
   },
   {
-    path: "investor",
+    path: "invests",
     label: "Đầu tư",
   },
   {
-    path: "agents",
-    label: "Cộng tác",
+    path: "partners",
+    label: "Đối tác",
   },
   {
     path: "about",

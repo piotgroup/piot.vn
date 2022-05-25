@@ -10,16 +10,16 @@ const menuItems = [
     label: "Trang chủ",
   },
   {
-    path: "#lending",
-    label: "Tài trợ",
+    path: "#services",
+    label: "Dịch vụ",
   },
   {
-    path: "#invest",
+    path: "#invests",
     label: "Đầu tư",
   },
   {
-    path: "#agents",
-    label: "Cộng tác",
+    path: "#partners",
+    label: "Đối tác",
   },
   {
     path: "#supports",
@@ -81,7 +81,7 @@ const styles = {
   logo: {},
   footerNav: {
     listStyle: "none",
-    // flexDirection: ['column', null, null, null, 'row'],
+    // flexDirection: ["column", null, null, null, "row"],
     m: ["25px 0 0", null, null, null, 0],
     p: 0,
     li: {

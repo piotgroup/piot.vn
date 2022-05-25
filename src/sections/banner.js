@@ -1,21 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Image, Container } from "theme-ui";
-import DonationForm from "components/donation-form";
-import banner from "assets/images/banner.png";
+import banner from "assets/images/slide-1.jpg";
 
 const Banner = () => {
-  return (
-    <Box as="section" id="home" sx={styles.section}>
-      <Container>
-        <Box sx={styles.contentWrapper}>
-          <DonationForm />
-          <Box as="figure" sx={styles.illustration}>
-            <Image src={banner} width="836" height="458" alt="illustration" />
-          </Box>
-        </Box>
-      </Container>
-    </Box>
-  );
+  return <Box as="section" id="home" sx={styles.section}></Box>;
 };
 
 export default Banner;
@@ -24,9 +12,11 @@ const styles = {
   section: {
     position: "relative",
     zIndex: 0,
-    pt: [17, null, null, 19, 21, 23],
-    pb: [8, null, null, 10, null, null, 10],
-    minHeight: [null, null, null, null, null, "100vh"],
+    height: "100vh",
+    backgroundImage: `url(${banner})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
   },
   contentWrapper: {
     gap: [12, null, null, 14, 12],

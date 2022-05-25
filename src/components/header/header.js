@@ -65,7 +65,7 @@ export default function Header() {
                     </Button>
                   )}
                   <Button variant="primary" sx={styles.donateNow}>
-                    ĐẦU TƯ NGAY
+                    ĐĂNG KÝ NGAY
                   </Button>
                 </Flex>
                 <NavbarDrawer />

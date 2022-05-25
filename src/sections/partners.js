@@ -9,25 +9,25 @@ import icon2 from "assets/images/services/2.png";
 import icon3 from "assets/images/services/3.png";
 
 const data = {
-  services: [
+  partners: [
     {
       id: 1,
       icon: icon1,
-      title: "Tài trợ hoá đơn",
+      title: "Bên bán",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
     {
       id: 2,
       icon: icon2,
-      title: "Tài trợ đơn đặt hàng",
+      title: "Bên mua",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
     {
       id: 3,
       icon: icon3,
-      title: "Tài trợ thương mại điện tử",
+      title: "Tài chính",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
@@ -60,16 +60,16 @@ const data = {
   ],
 };
 
-const Services = () => {
+const Partners = () => {
   return (
-    <Box as="section" id="services" sx={styles.section}>
+    <Box as="section" id="partners" sx={styles.section}>
       <Container>
         <SectionHeading
           slogan="Service we work for"
           title="What care we do for your family"
         />
         <Grid sx={styles.serviceGrid}>
-          {data.services.map((item) => (
+          {data.partners.map((item) => (
             <Service key={item.id} service={item} />
           ))}
         </Grid>
@@ -85,7 +85,7 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Partners;
 
 const styles = {
   section: {
