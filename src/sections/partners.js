@@ -13,21 +13,21 @@ const data = {
     {
       id: 1,
       icon: icon1,
-      title: "Bên bán",
+      title: "Doanh nghiệp",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
     {
       id: 2,
       icon: icon2,
-      title: "Bên mua",
+      title: "Công ty Tài chính",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
     {
       id: 3,
       icon: icon3,
-      title: "Tài chính",
+      title: "Cộng tác viên",
       desc: `Get your info tests delivered at home collect a sample from the your task.`,
       link: "#",
     },
@@ -65,8 +65,8 @@ const Partners = () => {
     <Box as="section" id="partners" sx={styles.section}>
       <Container>
         <SectionHeading
-          slogan="Service we work for"
-          title="What care we do for your family"
+          slogan="Mạng lưới đối tác"
+          title="Hợp tác để cùng phát triển"
         />
         <Grid sx={styles.serviceGrid}>
           {data.partners.map((item) => (

@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Image, Container, Heading, Text, Button } from "theme-ui";
 import Carousel from "react-multi-carousel";
+import { rgba } from "polished";
+
+import SectionHeading from "components/section-heading";
 
 const responsive = {
   desktop: {
@@ -74,22 +77,23 @@ const Banner = () => {
             <Image
               draggable={false}
               alt="text"
-              style={{ width: "100%", height: "100vh" }}
+              style={{ width: "100%", height: "100%" }}
               src={item.image}
             />
-            <Box
+            <Container
               style={{
                 position: "absolute",
+                top: "50%",
                 left: "50%",
-                bottom: "50%",
-                color: "white",
-                transform: "translateX(-50%)",
+                transform: "translate(-50%, -50%)",
               }}
             >
-              <Heading as="h1">{item.heading}</Heading>
-              <Text>{item.text}.</Text>
-              <Button>Xem thêm</Button>
-            </Box>
+              <SectionHeading
+                sx={styles.heading}
+                title={item.heading}
+                description={item.text}
+              />
+            </Container>
           </Box>
         ))}
       </Carousel>
@@ -104,10 +108,16 @@ const styles = {
     position: "relative",
     zIndex: 0,
   },
-  contentWrapper: {
-    gap: [12, null, null, 14, 12],
-    display: "grid",
-    gridTemplateColumns: ["1fr", null, null, null, "385px 1fr", "470px 1fr"],
-    alignItems: "center",
+  heading: {
+    mb: [7, null, null, 8, 9, 10],
+    h3: {
+      color: "white",
+      fontSize: [6, null, null, 10],
+    },
+    p: {
+      color: rgba("white", 0.6),
+      fontSize: [2],
+      m: ["15px auto 0", null, null, "10px auto 0"],
+    },
   },
 };

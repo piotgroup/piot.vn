@@ -65,8 +65,8 @@ const Services = () => {
     <Box as="section" id="services" sx={styles.section}>
       <Container>
         <SectionHeading
-          slogan="Service we work for"
-          title="What care we do for your family"
+          slogan="Dịch vụ của chúng tôi"
+          title="Thành công của bạn là niềm vui của chúng tôi"
         />
         <Grid sx={styles.serviceGrid}>
           {data.services.map((item) => (
