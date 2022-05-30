@@ -7,6 +7,8 @@ import Subscribe from "sections/subscribe";
 import VideoIntro from "sections/video-intro";
 import Blog from "sections/blog";
 
+import "react-multi-carousel/lib/styles.css";
+
 export default function IndexPage() {
   return (
     <Layout>
