@@ -29,21 +29,21 @@ const data = [
       "Nền tảng tài trợ thương mại trực tuyến cung cấp các giải pháp tài chính cho các doanh nghiệp nhỏ và vừa",
     text: "Nền tảng trực tuyến của Piot giúp kết nối các doanh nghiệp cần vốn vốn lưu động với các nhà đầu tư đang tìm kiếm các danh mục đầu tư hiệu quả",
     image:
-      "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=60",
   },
   {
     id: 2,
     heading: "Tài trợ vốn lưu động cho doanh nghiệp",
     text: "Chuyển dòng tiên tương lại thành công cụ tăng trưởng cho hiện tại.",
     image:
-      "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&q=60",
   },
   {
     id: 3,
     heading: "Danh mục đầu tư hiệu quả cho Nhà đầu tư",
     text: "Tài trợ thương mại là loại tài sản đầu tư mới cho các Nhà đầu tư. Các khoản đầu tư ngắn hạn nhưng tỉ suất sinh lời cao và rủi ro thâp.",
     image:
-      "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=60",
   },
 ];
 
@@ -77,7 +77,7 @@ const Banner = () => {
             <Image
               draggable={false}
               alt="text"
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100vh" }}
               src={item.image}
             />
             <Container
@@ -107,6 +107,7 @@ const styles = {
   section: {
     position: "relative",
     zIndex: 0,
+    height: "100vh",
   },
   heading: {
     mb: [7, null, null, 8, 9, 10],

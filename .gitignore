@@ -79,3 +79,6 @@ yarn.lock
 # Local Netlify folder
 .netlify
 .vercel
+
+# Ignore Backend
+backend
