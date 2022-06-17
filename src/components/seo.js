@@ -9,72 +9,118 @@ import React from "react";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ lang, seo = {} }) {
+  const { strapiGlobal } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+        strapiGlobal {
+          siteName
+          favicon {
+            localFile {
+              url
+            }
+          }
+          defaultSeo {
+            metaTitle
+            metaDescription
+            shareImage {
+              localFile {
+                url
+              }
+            }
           }
         }
       }
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const { siteName, defaultSeo, favicon } = strapiGlobal;
+
+  const fullSeo = { ...defaultSeo, ...seo };
+
+  fullSeo.metaTitle = `${fullSeo.metaTitle} | ${siteName}`;
+
+  const getMetaTags = () => {
+    const tags = [];
+
+    if (fullSeo.metaTitle) {
+      tags.push(
+        {
+          property: "og:title",
+          content: fullSeo.metaTitle,
+        },
+        {
+          name: "twitter:title",
+          content: fullSeo.metaTitle,
+        }
+      );
+    }
+    if (fullSeo.metaDescription) {
+      tags.push(
+        {
+          name: "description",
+          content: fullSeo.metaDescription,
+        },
+        {
+          property: "og:description",
+          content: fullSeo.metaDescription,
+        },
+        {
+          name: "twitter:description",
+          content: fullSeo.metaDescription,
+        }
+      );
+    }
+    if (fullSeo.shareImage) {
+      const imageUrl = fullSeo.shareImage.localFile.url;
+      tags.push(
+        {
+          name: "image",
+          content: imageUrl,
+        },
+        {
+          property: "og:image",
+          content: imageUrl,
+        },
+        {
+          name: "twitter:image",
+          content: imageUrl,
+        }
+      );
+    }
+    if (fullSeo.article) {
+      tags.push({
+        property: "og:type",
+        content: "article",
+      });
+    }
+    tags.push({ name: "twitter:card", content: "summary_large_image" });
+
+    return tags;
+  };
+
+  const metaTags = getMetaTags();
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
+      title={fullSeo.metaTitle}
+      link={[
         {
-          name: `description`,
-          content: metaDescription,
+          rel: "icon",
+          href: favicon.localFile.url,
         },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      ]}
+      meta={metaTags}
     />
   );
 }
 
 SEO.defaultProps = {
   lang: `vi`,
-  meta: [],
-  description: ``,
+  defaultSeo: {},
 };
 
 export default SEO;
